@@ -21,48 +21,45 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
 // import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainHeaderComponent
-  ],
-  imports: [
-    StoreModule.forRoot({
-      router: routerReducer,
-    }),
-    EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25 }),
-    StoreRouterConnectingModule.forRoot({
-      routerState: RouterState.Minimal,
-    }),
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    ShareModuleModule,
-    AppSharedModule,
-    ShareModuleModule,
-    MatListModule,
-    MatDialogModule,
-    SocialLoginModule
-  ],
-  entryComponents: [LoginComponent],
-  providers: [HttpClientModule,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: true,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '136130410877-tt3b9lf5mr97g48m82q0ajnahf8spie1.apps.googleusercontent.com'
-            ),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        MainHeaderComponent
+    ],
+    imports: [
+        StoreModule.forRoot({
+            router: routerReducer,
+        }),
+        EffectsModule.forRoot([]),
+        StoreDevtoolsModule.instrument({ maxAge: 25 }),
+        StoreRouterConnectingModule.forRoot({
+            routerState: RouterState.Minimal,
+        }),
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        ShareModuleModule,
+        AppSharedModule,
+        ShareModuleModule,
+        MatListModule,
+        MatDialogModule,
+        SocialLoginModule
+    ],
+    providers: [HttpClientModule,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: true,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider('136130410877-tt3b9lf5mr97g48m82q0ajnahf8spie1.apps.googleusercontent.com'),
+                    },
+                ],
+            } as SocialAuthServiceConfig,
+        },],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
