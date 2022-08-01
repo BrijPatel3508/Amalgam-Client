@@ -1,0 +1,38 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header class="pb-3">
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+
+        <form class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput [(ngModel)]="username" name="username">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput [(ngModel)]="email" name="email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [(ngModel)]="password" name="password">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose designation</mat-label>
+                    <mat-select [(ngModel)]="userType" name="userType">
+                        <mat-option [value]="user" *ngFor="let user of User">{{user}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                <button fxFlex="30" mat-raised-button color="primary" class="btn-block w-25"
+                    (click)="onReset()">Reset</button>
+                <button fxFlex="30" mat-raised-button color="primary" class="btn-block w-25"
+                    (click)="onRegister()">Register</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

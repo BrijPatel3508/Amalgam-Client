@@ -1,0 +1,40 @@
+<div fxLayout="row" class="dashboard-height">
+    <div class="vertical-toolbar py-2">
+        <div mat-icon-button class="material-symbols-rounded text-light cursor-pointer" (click)="addApplication()">
+            <mat-icon>add_box</mat-icon>
+        </div>
+    </div>
+    <div fxLayout="row wrap">
+        <div fxFlex="40" class="m-5" *ngFor="let application of applications">
+            <mat-card class="application-card">
+                <h2 class="text-center">{{application.name}}</h2>
+                <div class="text-center mb-3 application-icon"><img class="w-25 m-0" mat-card-image width="100px"
+                        [src]="application.icon"></div>
+                <mat-card-content>
+                    <p>{{application.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="bottom-0 m-2 position-absolute" mat-button (click)="routeTo('user')"
+                        [disabled]="application.primaryButtonDisabled">{{application.primaryButton}}</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <!-- <div fxFlex="40" class="m-5">
+            <mat-card class="example-card">
+                <h2 class="text-center">Internet Of Things</h2>
+                <div class="text-center mb-3"><img class="w-25 m-0" mat-card-image width="100px"
+                        src="../../../assets/IOT.gif"></div>
+                <mat-card-content>
+                    <p>
+                        The Internet of Things (IoT) describes the network of physical objects—“things”—that are
+                        embedded with sensors, software, and other technologies for the purpose of connecting and
+                        exchanging data with other devices and systems over the internet.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button disabled (click)="routeTo('user')">CHECK</button>
+                </mat-card-actions>
+            </mat-card>
+        </div> -->
+    </div>
+</div>

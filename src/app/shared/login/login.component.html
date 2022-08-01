@@ -1,0 +1,32 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header class="pb-3">
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+
+        <form class="example-form">
+            <mat-card-content>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Username</mat-label>
+                    <input matInput [(ngModel)]="username" name="username">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput [(ngModel)]="password" name="password">
+                </mat-form-field>
+
+            </mat-card-content>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                <button fxFlex="30" mat-raised-button color="primary" class="btn-block w-25"
+                    (click)="onReset()">Reset</button>
+                <button fxFlex="30" type="submit" mat-raised-button color="primary" class="btn-block w-25"
+                    (click)="onRegister()">Login</button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                <button type="button" class="btn btn-danger" (click)="loginWithGoogle()">Login with Google</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

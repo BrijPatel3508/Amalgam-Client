@@ -1,0 +1,19 @@
+.vertical-toolbar {
+    background-color: rgb(13, 14, 54);
+    width: 36px;
+    text-align: center;
+}
+
+.dashboard-height {
+    height: calc(100vh - 64px);
+}
+
+.application-card {
+    height: 20rem;
+}
+
+.application-icon {
+    height: 7rem;
+    display: table-cell;
+    vertical-align: middle;
+}

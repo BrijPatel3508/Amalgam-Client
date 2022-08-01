@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <button (click)="menuClicked.emit()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Amalgam</span>
+    <span class="flex-spacer"></span>
+
+    <div *ngIf="authService?.isUserLoggedIn(); else login">
+        <button mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <!-- <button mat-icon-button class="example-icon favorite-icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>share</mat-icon>
+        </button> -->
+        <button mat-icon-button (click)="onLogout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+
+    <ng-template #login>
+        <button class="m-3" mat-icon-button (click)="onLogin()">
+            Login
+        </button>
+        <button mat-icon-button (click)="onSignUp()">
+            SignUp
+        </button>
+    </ng-template>
+</mat-toolbar>
