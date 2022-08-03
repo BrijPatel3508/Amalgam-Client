@@ -6,7 +6,7 @@ import { from } from 'rxjs';
 import { resultReceived } from '../app-shared/dialog-modal/dialog-modal.actions';
 import { AuthServiceService } from '../services/auth-service.service';
 import { changeNothing, login, loginSuccess, loginWithGoogle, redirectTo, registerUser, removeTokenKey, setTokenKey } from './shared.actions';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SharedEffects {

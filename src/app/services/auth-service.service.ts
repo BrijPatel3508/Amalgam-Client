@@ -1,9 +1,9 @@
+import { GoogleLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { IApiResponse } from '../interfaces/api-response.interface';
 import { IUser } from '../interfaces/user.interface';
-import { GoogleLoginProvider, SocialAuthService } from "angularx-social-login";
 
 @Injectable({
   providedIn: 'root'

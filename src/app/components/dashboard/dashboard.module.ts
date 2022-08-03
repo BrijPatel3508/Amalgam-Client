@@ -19,12 +19,15 @@ import { ShareModuleModule } from 'src/app/shared/share-module.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { UserDirectoryComponent } from './components/user-directory/user-directory.component';
+import { AppMapComponent } from './components/app-map/app-map.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     AddApplicationComponent,
-    UserDirectoryComponent
+    UserDirectoryComponent,
+    AppMapComponent
   ],
   imports: [
     StoreModule.forFeature(Features.Dashboard, dashboardReducer.reducer),
@@ -37,7 +40,10 @@ import { UserDirectoryComponent } from './components/user-directory/user-directo
     MatFormFieldModule,
     FormsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDX_QgPz9VQ-BdAGnH2D5HJHcCFy8ZVQsQ'
+    })
   ],
   exports: [
     DashboardComponent

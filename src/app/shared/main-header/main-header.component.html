@@ -2,7 +2,7 @@
     <button (click)="menuClicked.emit()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
-    <span>Amalgam</span>
+    <span href="#">Amalgam</span>
     <span class="flex-spacer"></span>
 
     <div *ngIf="authService?.isUserLoggedIn(); else login">

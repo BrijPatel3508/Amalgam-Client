@@ -5,4 +5,5 @@ export interface IApplication {
     description: string;
     primaryButton: string;
     primaryButtonDisabled: boolean;
+    routePath: string;
 } 

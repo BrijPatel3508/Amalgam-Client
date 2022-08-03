@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShareModuleModule } from './shared/share-module.module';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppSharedModule } from './app-shared/app-shared.module';
 import { MainHeaderComponent } from './shared/main-header/main-header.component';
@@ -14,11 +15,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { routerReducer, RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MatDialogModule } from '@angular/material/dialog';
-import { LoginComponent } from './shared/login/login.component';
 import { AuthInterceptor } from './interceptors/auth-interceptor.interceptor';
-import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
-// import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { SocialLoginModule, GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
     declarations: [
@@ -51,15 +50,20 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
         {
             provide: 'SocialAuthServiceConfig',
             useValue: {
-                autoLogin: true,
+                autoLogin: false,
                 providers: [
                     {
                         id: GoogleLoginProvider.PROVIDER_ID,
-                        provider: new GoogleLoginProvider('136130410877-tt3b9lf5mr97g48m82q0ajnahf8spie1.apps.googleusercontent.com'),
-                    },
+                        provider: new GoogleLoginProvider(
+                            '136130410877-tt3b9lf5mr97g48m82q0ajnahf8spie1.apps.googleusercontent.com'
+                        )
+                    }
                 ],
+                onError: (err) => {
+                    console.error(err);
+                }
             } as SocialAuthServiceConfig,
-        },],
+        }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
