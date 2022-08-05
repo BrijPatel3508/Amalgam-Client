@@ -45,6 +45,15 @@ export class DashboardComponent implements OnInit {
       primaryButton: 'CHECK',
       primaryButtonDisabled: false,
       routePath: 'map'
+    },
+    {
+      name: 'Charts',
+      version: '1.0.0',
+      description: "Google Maps is a web mapping platform and consumer application offered by Google. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bike, air and public transportation.",
+      icon: '../../../assets/chart.gif',
+      primaryButton: 'CHECK',
+      primaryButtonDisabled: true,
+      routePath: 'chart'
     }
   ]
 

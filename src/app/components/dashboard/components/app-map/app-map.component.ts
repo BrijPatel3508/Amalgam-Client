@@ -9,8 +9,9 @@ export class AppMapComponent implements OnInit {
 
   constructor() { }
   title = 'My first AGM project';
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 22.308155;
+  lng = 70.800705;
+  zoom = 5;
 
   ngOnInit(): void {
   }
