@@ -1,0 +1,21 @@
+.image_cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px;
+
+    object-fit: cover;
+    object-position: center right;
+}
+
+.image_circle {
+    border-radius: 50%;
+    padding: 2px;
+    border: 4px dashed #cc9df8;
+}
+
+.image_circle img {
+    animation: spin 10s infinite reverse linear;
+    width: 100%;
+    border-radius: 50%;
+}

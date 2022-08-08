@@ -1,8 +1,10 @@
 import { createAction, props } from "@ngrx/store";
-import { IUser } from "src/app/interfaces/user.interface";
 
-export const loadApplications = createAction('[Dashboard] Load Applications');
+export const showSuccess = createAction('[App-Shared] Show Success',
+    props<{message: string}>());
 
-export const addUser = createAction('[Dashboard] Add User',
-    props<{ user: IUser }>,
-);
+export const showError = createAction('[App-Shared] Show Success',
+    props<{message: string}>());
+
+export const showWarn = createAction('[App-Shared] Show Warning',
+    props<{message: string}>());

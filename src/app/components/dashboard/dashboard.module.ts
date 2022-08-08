@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
-import { RouterModule } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard.routing.module';
 import { DashboardEffects } from './dashboard.effects';
 import { EffectsModule } from '@ngrx/effects';
@@ -15,12 +14,12 @@ import { AddApplicationComponent } from './components/add-application/add-applic
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { ShareModuleModule } from 'src/app/shared/share-module.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { UserDirectoryComponent } from './components/user-directory/user-directory.component';
 import { AppMapComponent } from './components/app-map/app-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { AppSharedModule } from 'src/app/app-shared/app-shared.module';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,9 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     StoreModule.forFeature(Features.Dashboard, dashboardReducer.reducer),
     EffectsModule.forFeature([DashboardEffects]),
-    FlexLayoutModule,
     DashboardRoutingModule,
+    FlexLayoutModule,
+    AppSharedModule,
     CommonModule,
     MatIconModule,
     MatInputModule,

@@ -7,21 +7,28 @@ import { EffectsModule } from '@ngrx/effects';
 import { Features } from '../enums/features.enum';
 import { DialogModalEffects } from './dialog-modal/dialog-modal.effects';
 import * as dialogModalReducer from './dialog-modal/dialog-modal.reducer';
+import { DeveloperDetailsComponent } from './developer-details/developer-details.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
   declarations: [
     DialogModalComponent,
-    ExceptionHandlingComponent
+    ExceptionHandlingComponent,
+    DeveloperDetailsComponent
   ],
   imports: [
     StoreModule.forFeature(Features.AppShared, dialogModalReducer.reducer),
     EffectsModule.forFeature([DialogModalEffects]),
-    CommonModule
+    CommonModule,
+    FlexLayoutModule,
+    MatSnackBarModule
   ],
   exports: [
     DialogModalComponent,
-    ExceptionHandlingComponent
+    ExceptionHandlingComponent,
+    DeveloperDetailsComponent
   ],
   providers: []
 })

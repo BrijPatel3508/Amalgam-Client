@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    this.store.dispatch(loadApplications());
+    // this.store.dispatch(loadApplications());
   }
 
   addApplication() {

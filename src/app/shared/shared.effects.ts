@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { ofType } from '@ngrx/effects';
-import { map, exhaustMap, tap, catchError } from 'rxjs/operators';
+import { map, exhaustMap, tap, catchError, mergeMap } from 'rxjs/operators';
 import { from } from 'rxjs';
 import { resultReceived } from '../app-shared/dialog-modal/dialog-modal.actions';
 import { AuthServiceService } from '../services/auth-service.service';
 import { changeNothing, login, loginSuccess, loginWithGoogle, redirectTo, registerUser, removeTokenKey, setTokenKey } from './shared.actions';
 import { Router } from '@angular/router';
+import { showSuccess } from '../app-shared/exception-handling/exception-handling.actions';
 
 @Injectable()
 export class SharedEffects {
@@ -63,8 +64,9 @@ export class SharedEffects {
 
     @Effect()
     loginSuccess = this.actions.pipe(ofType(loginSuccess),
-        map(action => {
-            return setTokenKey({ tokenKey: action?.user?.accessToken || "" });
+        mergeMap(action => {
+            return [setTokenKey({ tokenKey: action?.user?.accessToken || "" }), 
+            showSuccess({message: "Authentication Successfull"})];
         }),
     );
 

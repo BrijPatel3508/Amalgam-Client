@@ -1,10 +1,13 @@
 <div fxLayout="row" class="dashboard-height">
     <div class="vertical-toolbar py-2">
-        <div mat-icon-button class="material-symbols-rounded text-light cursor-pointer" (click)="addApplication()">
+        <button mat-icon-button disabled class="material-symbols-rounded cursor-pointer" (click)="addApplication()">
             <mat-icon>add_box</mat-icon>
-        </div>
+        </button>
     </div>
     <div fxLayout="row wrap" class="overflow-auto">
+        <div fxFlex="100" class="p-3">
+            <app-developer-details></app-developer-details>
+        </div>
         <div fxFlex="40" class="m-5" *ngFor="let application of applications">
             <mat-card class="application-card">
                 <h2 class="text-center">{{application.name}}</h2>
